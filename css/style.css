@@ -114,9 +114,17 @@ h3{ font-size: var(--fs-h3);}
 .section__subtitle--intro,
 .section__subtitle--about{
   background: var(--clr-accent);
+  /* background: pink; */
   font-family: var(--ff-secondary);
   margin-bottom: 1em;
   padding: .25em 1em ;
+}
+
+.section__subtitle--work{
+  color: var(--clr-accent);
+  font-weight: var(--fw--bold);
+  margin-bottom: 2em;
+
 }
 
 
@@ -229,7 +237,7 @@ nav{
 .about-me{
 max-width: 1000px ;
 margin: 0 auto;
-padding-bottom: 0;
+/* padding-bottom: 0; */
 }
 
 .about-me__img{
@@ -263,10 +271,45 @@ padding-bottom: 0;
     padding-left: 1em;
     padding-right: calc(200px + 2em);
   }
-  
+
   .about-me__img{
     grid-area: img;
     z-index: 2;
   }
+ } /*end of media query */
+
+ 
+ /* My Work CSS Styles */
+.my-work{
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.portfolio{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 }
+
+.portfolio__item{
+  background: var(--clr-accent);
+  overflow: hidden;
+}
+
+
+.portfolio__img{
+  transition: 
+    transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+}
+
+.portfolio__item:focus{
+  z-index: 2;
+}
+
+.portfolio__img:hover {
+  transform: scale(1.2);
+  opacity: .75;
+}
+
