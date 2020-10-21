@@ -206,7 +206,7 @@ nav{
 
 
 
-@media (min-width : 800px)
+@media (min-width: 800px)
 {
   .services{
     display: flex;
@@ -222,4 +222,51 @@ nav{
   .service > h3{
     font-weight: bold;
   }
+}
+
+
+/* About Me Styles */
+.about-me{
+max-width: 1000px ;
+margin: 0 auto;
+padding-bottom: 0;
+}
+
+.about-me__img{
+  box-shadow: var(--bs);
+}
+
+@media (min-width: 600px){
+  .about-me{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+
+    grid-template-areas: 
+      "title img"
+      "subtitle img"
+      "text img" ;
+    
+     grid-column-gap: 2em; 
+  }
+
+  .section__title--about{
+    grid-area: title;
+  }
+
+  .section__subtitle--about{
+    /* grid-area: subtitle; */
+    grid-column: 1/ -1;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% + 2em);
+    padding-left: 1em;
+    padding-right: calc(200px + 2em);
+  }
+  
+  .about-me__img{
+    grid-area: img;
+    z-index: 2;
+  }
+
 }
